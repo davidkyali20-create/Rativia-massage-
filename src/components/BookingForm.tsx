@@ -103,9 +103,9 @@ export default function BookingForm({
         <div className="w-16 h-16 bg-gold-main/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-gold-main/30">
           <CheckCircle className="h-10 w-10 text-gold-main" />
         </div>
-        <h3 className="font-serif text-3xl font-bold text-white mb-2">Appointment Requested</h3>
-        <p className="text-neutral-400 text-sm max-w-md mx-auto mb-8 font-light leading-relaxed">
-          Your luxury door-to-door therapeutic request has been received. Our concierge will verify therapist travel and contact you shortly.
+        <h3 className="font-serif text-3xl font-bold text-[#c5a059] mb-2 uppercase tracking-wide">Appointment Requested</h3>
+        <p className="text-neutral-300 text-xs max-w-md mx-auto mb-8 font-light leading-relaxed">
+          Your bespoke session is now active in our queue as <span className="text-[#c5a059] font-bold">Pending</span>. Because all sessions are 100% door-to-door, our logistics coordinator will review map coordinates and call you at your registered phone number to finalize travel and change your status to <strong>Approved</strong>. You can track this instantly via the Live Scheduling Dashboard below.
         </p>
 
         {/* Invoice Receipt details */}
@@ -306,7 +306,7 @@ export default function BookingForm({
           ) : (
             <form onSubmit={handleBookSession} className="space-y-5 animate-fadeIn">
               
-              {/* Service Type (Readonly display, but selectable) */}
+              {/* Service Type and Assigned Specialist row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="text-[9px] uppercase tracking-widest text-[#c5a059] block mb-2 font-semibold">Service Type</label>
@@ -316,27 +316,20 @@ export default function BookingForm({
                     className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-sm text-white focus:border-[#c5a059] outline-none cursor-pointer transition-all duration-300"
                   >
                     {SERVICES.map((s) => (
-                      <option key={s.id} value={s.id} className="bg-card-grey">
+                      <option key={s.id} value={s.id} className="bg-[#151515]">
                         {s.name} ({s.price} KES)
                       </option>
                     ))}
                   </select>
                 </div>
 
-                {/* Therapist selector */}
+                {/* Single assigned specialist display instead of a redundant select */}
                 <div>
-                  <label className="text-[9px] uppercase tracking-widest text-[#c5a059] block mb-2 font-semibold">Select Specialist</label>
-                  <select
-                    value={selectedTherapistId}
-                    onChange={(e) => setSelectedTherapistId(e.target.value)}
-                    className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-sm text-white focus:border-[#c5a059] outline-none cursor-pointer transition-all duration-300"
-                  >
-                    {THERAPISTS.map((t) => (
-                      <option key={t.id} value={t.id} className="bg-card-grey">
-                        {t.name} — {t.specialty.split('&')[0]}
-                      </option>
-                    ))}
-                  </select>
+                  <label className="text-[9px] uppercase tracking-widest text-[#c5a059] block mb-2 font-semibold">Assigned Specialist</label>
+                  <div className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-sm text-[#c5a059] font-medium flex items-center justify-between select-none">
+                    <span>{therapistDetails.name}</span>
+                    <span className="text-[9.5px] uppercase tracking-widest text-white/50 font-normal">Principal Practitioner</span>
+                  </div>
                 </div>
               </div>
 
@@ -407,7 +400,7 @@ export default function BookingForm({
               </div>
 
               {/* Core booking total info summary button */}
-              <div className="border-t border-white/5 pt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-3 sm:space-y-0">
+              <div className="border-t border-white/5 pt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-3 sm:space-y-0 pb-2">
                 <div>
                   <span className="text-[9px] uppercase tracking-widest text-[#c5a059] block font-semibold">Total Package Price</span>
                   <div className="flex items-baseline space-x-1.5 mt-1">
@@ -420,8 +413,19 @@ export default function BookingForm({
                   type="submit"
                   className="py-4 mt-4 bg-gradient-to-r from-[#8e6d2f] to-[#c5a059] rounded-lg text-black font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all duration-300 px-8 cursor-pointer"
                 >
-                  Confirm Booking
+                  Confirm Booking Room
                 </button>
+              </div>
+
+              {/* Instant Trust & Approval Verification Banner */}
+              <div className="p-4 rounded-xl bg-gradient-to-r from-[#17120a] to-[#0a0805] border border-[#8e6d2f]/30 text-left">
+                <p className="text-[10px] text-[#c5a059] uppercase tracking-widest font-bold mb-1 flex items-center gap-1.5">
+                  <span className="inline-block w-1.5 h-1.5 bg-green-500 rounded-full animate-ping" />
+                  How will my booking be approved?
+                </p>
+                <p className="text-[11px] text-white/70 font-sans leading-relaxed">
+                  Upon submission, your reservation log starts instantly as <span className="text-gold-light">Pending</span> in our system. Because all sessions are <strong>100% door-to-door</strong> with catered transport, our concierge staff will review coordinates and call you at your number to finalize approval. You can also track the real-time status in the live schedule below.
+                </p>
               </div>
 
             </form>

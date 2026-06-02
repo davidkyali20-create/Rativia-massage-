@@ -41,46 +41,30 @@ export const SERVICES: Service[] = [
 
 export const THERAPISTS: Therapist[] = [
   {
-    id: 'elena',
-    name: 'Dr. Elena Vance',
-    specialty: 'Aromatherapy & Holistic Healing',
-    rating: 4.9,
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300',
-    bio: 'Over 8 years of luxury spa leadership, specializing in bespoke essential oil blends and dynamic therapeutic massage.',
-  },
-  {
-    id: 'marcus',
-    name: 'Marcus Thorne',
-    specialty: 'Deep Tissue & Sports Recovery',
-    rating: 4.8,
-    avatar: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=300',
-    bio: 'Dedicated physical practitioner skilled in structural restoration, deep muscle decompression, and athletic re-tuning.',
-  },
-  {
     id: 'seraphina',
     name: 'Seraphina Kaelen',
-    specialty: 'Ritavia Signature & Soft Touch',
+    specialty: 'Ritavia Signature Practitioner',
     rating: 5.0,
     avatar: 'https://images.unsplash.com/photo-1594744803329-e58b31de215f?auto=format&fit=crop&q=80&w=300',
-    bio: 'Devoted to deep neural calming and whole-body harmony utilizing proprietary fluid relaxation techniques.',
+    bio: 'Ritavia master therapist specializing in the signature Heals & Wellness door-to-door therapeutic treatments shown on our flyer.',
   }
 ];
 
 export const INITIAL_FAQS = [
   {
     question: 'How does the Door to Door service work?',
-    answer: 'Our professional therapists bring everything needed—including luxury portable tables, premium linen sheets, heated organic massage oils, and ambient wellness soundtracks—directly to your home or hotel suite.'
+    answer: 'Ritavia brings the luxury spa experience directly to your door—our certified master specialist handles all travel to your location, carrying a premium folding table, organic heated botanicals, ambient music, and fresh linens.'
   },
   {
-    question: 'Are transportation costs included in the price?',
-    answer: 'Absolutely. Transportation within our service bounds is fully catered and included in your booking price. There are no hidden fees or extra surcharges.'
+    question: 'How will I know when my booking is approved?',
+    answer: 'Once you request an appointment, you are registered instantly. Our dispatch coordinator reviews the specialist schedule and contacts you directly on your workspace phone (0742678523) or via email to confirm coordinates. You can also view real-time status shifts right here in your live Interactive Scheduling Dashboard.'
   },
   {
-    question: 'How should I prepare for my therapist’s arrival?',
-    answer: 'We recommend choosing a quiet, warm room with enough space (about 3x2 meters) for our premium massage table to stand comfortably. Please have 2 fresh towels available if you prefer using your own linens.'
+    question: 'Are transportation logistics included in the price?',
+    answer: 'Yes, absolutely. As printed on our flyer, we fully cater for the transport to and fro within our metropolitan Hub boundary. The KES 1000 price for our signature session is completely all-inclusive.'
   },
   {
-    question: 'Can I choose my favorite therapist?',
-    answer: 'Yes! Our booking form allows you to select a specific specialist based on their therapeutic styles, or select "First Available" for quickest scheduling.'
+    question: 'How should I prepare for my door-to-door session?',
+    answer: 'Choose a quiet area with enough floor space (approx 3x2 meters) for us to set up. We bring the massage bed, luxury oils, and music. All you need is a comfortable, warm environment to relax.'
   }
 ];
